@@ -2,19 +2,25 @@
 
 import urllib2
 import json
-from pprint import pprint
 
-my_realm = ""
-my_uri = ""
-my_user = ""
-my_passwd = ""
+def getServiceLists(uri, realm = None, user = None, passwd = None):
+    if realm is not None:
+        auth_handler = urllib2.HTTPBasicAuthHandler()
+        auth_handler.add_password(realm = realm, uri = uri, user = user, passwd = passwd)
+        opener = urllib2.build_opener(auth_handler)
+        urllib2.install_opener(opener)
+    try:
+        icinga = json.loads(urllib2.urlopen(uri).read())
+    except urllib2.HTTPError:
+        return None, None
 
-auth_handler = urllib2.HTTPBasicAuthHandler()
-auth_handler.add_password(realm = my_realm, uri = my_uri, user = my_user, passwd = my_passwd)
-opener = urllib2.build_opener(auth_handler)
-urllib2.install_opener(opener)
-#response = urllib2.urlopen(my_uri)
+    critical = list()
+    warning = list()
 
-icinga = json.loads(urllib2.urlopen(my_uri).read())
-for f_k, f_v in icinga.iteritems():
-	print f_v.items()
+    for service in icinga['status']['service_status']:
+        if service['status'] == 'WARNING':
+            warning.append(service)
+        elif service['status'] == 'CRITICAL':
+            critical.append(service)
+
+    return warning, critical

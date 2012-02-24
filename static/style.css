@@ -1,0 +1,12 @@
+#warning,
+#critical {
+    height: 50%;
+}
+
+#warning {
+    background: #FFA500;
+}
+
+#critical {
+    background: #f00;
+}
