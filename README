@@ -1,3 +1,3 @@
 nagios from distance
 
-utilizing status.cgi with some python
+utilizing status.cgi with some python (bottle)
