@@ -15,9 +15,9 @@ def index():
 
     return template("templates/index.tpl", warning=warning, critical=critical)
 
-@route("/static/style.css")
-def style():
-    return static_file("style.css", root="static/", mimetype="text/css")
+@route("/static/:file#.*#")
+def files(file):
+    return static_file(file, root="static/")
 
 if __name__ == "__main__":
     debug()
