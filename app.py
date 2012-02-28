@@ -1,14 +1,16 @@
-from bottle import run, debug, route, static_file, template, request
+from bottle import run, debug, route, static_file, template
 from nfd import getServiceLists
+import ConfigParser
 
+config = ConfigParser.ConfigParser()
+config.read(['config.conf'])
 
 @route("/")
-@route("/", method="GET")
 def index():
-    uri = request.GET.get("uri", "") + '/cgi-bin/status.cgi?jsonoutput'
-    realm = request.GET.get("realm", None)
-    user = request.GET.get("user", None)
-    passwd = request.GET.get("passwd", None)
+    uri = config.get('monitor', 'uri') + '?jsonoutput'
+    realm = config.get('monitor', "realm")
+    user = config.get('monitor', "user")
+    passwd = config.get('monitor', "password")
 
     warning, critical, okay = getServiceLists(uri, realm, user, passwd)
     if warning is None and critical is None:
