@@ -32,6 +32,6 @@ scp /var/www/nfd/monitor/xinitrc \
 scp /var/www/nfd/monitor/after_start \
 	root@example.com:/root/after_start
 
-# HOME may not be set during startup and script will assume / as home,
-# so provide a link to the real startup script
+HOME may not be set during startup and script will assume / as home, so provide a link to the real startup script
+
 ssh root@example.com "ln -s /root/.xinitrc /"
