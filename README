@@ -12,6 +12,6 @@ Usage:
 2. nohup python app.py &
 3. Browse to http://localhost:8080/?uri=URI&user=USER&passwd=PASSWORD&realm=REALM
     - URI: http://your.(nagios/icinga)-host.com/(nagios/icinga)
-    - USER (optional): your nagiosadmin/icingaadmin
+    - USER (optional): basic auth user
     - PASSWORD  (optional): the corresponding password
     - REALM  (optional): the access-realm if you protected your site with an http basic auth
