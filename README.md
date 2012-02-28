@@ -1,13 +1,13 @@
-nagios from distance
+# nagios from distance #
 
-Status Monitor to view your current Nagios/Icinga
+## Status Monitor to view your current Nagios/Icinga ##
 
-Requirements:
+### Requirements ###
 
 1. python-bottle - http://bottlepy.org/
 2. Nagios/Icinga installation
 
-Usage:
+### Usage ###
 
 1. After checkout change to folder nfd
 2. nohup python app.py &
