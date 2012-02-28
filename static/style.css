@@ -74,13 +74,20 @@ table {
     font-size: 4.5em;
 }
 
-.gruen {
+.okay {
     background: #0C3;
 }
 
-.gruen h1 {
+.okay h1 {
     color: #fff;
     font-size: 6em;
     text-align: center;
     margin: 20% 0 0;
+}
+
+.okay li {
+    list-style: none;
+    margin-left: 33%;
+    margin-top: 10px;
+    font-size: 3em;
 }

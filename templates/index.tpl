@@ -5,11 +5,16 @@
     <link rel="stylesheet" type="text/css" href="/static/style.css" media="all"/>
     <script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="/static/script.js"></script>
-    <meta http_equiv="refresh" content="15">
+    <META HTTP-EQUIV="REFRESH" CONTENT="90">
 </head>
 %if warning == [] and critical == []:
-<body class="gruen">
+<body class="okay">
 <h1>OK</h1>
+    %for status in okay:
+    <li>
+        <h3>{{status['host']}} ({{status['service']}})</h3>
+    </li>
+%end
 %else:
 <body>
 %end

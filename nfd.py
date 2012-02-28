@@ -12,15 +12,18 @@ def getServiceLists(uri, realm = None, user = None, passwd = None):
     try:
         icinga = json.loads(urllib2.urlopen(uri).read())
     except urllib2.HTTPError:
-        return None, None
+        return None, None, None
 
     critical = list()
     warning = list()
+    okay = list()
 
     for service in icinga['status']['service_status']:
         if service['status'] == 'WARNING':
             warning.append(service)
         elif service['status'] == 'CRITICAL':
             critical.append(service)
+        elif service['status'] == 'OK':
+            okay.append(service)
 
-    return warning, critical
+    return warning, critical, okay

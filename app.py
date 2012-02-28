@@ -9,11 +9,11 @@ def index():
     user = request.GET.get("user", None)
     passwd = request.GET.get("passwd", None)
 
-    warning, critical = getServiceLists(uri, realm, user, passwd)
+    warning, critical, okay = getServiceLists(uri, realm, user, passwd)
     if warning is None and critical is None:
         return "<h1>Failed to fetch data</h1>"
 
-    return template("templates/index.tpl", warning=warning, critical=critical)
+    return template("templates/index.tpl", warning=warning, critical=critical, okay=okay)
 
 @route("/static/:file#.*#")
 def files(file):
