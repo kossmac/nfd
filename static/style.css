@@ -2,6 +2,7 @@
 html,
 body {
     height: 100%;
+    overflow: auto;
 }
 
 html, body, div, span, applet, object, iframe,
