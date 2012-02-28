@@ -12,7 +12,7 @@
                 .hide()
                 .detach()
                 .appendTo($('#critical'));
-            $('.okay li:first')
+            $('.okay li:lt(4)')
                 .hide()
                 .detach()
                 .appendTo($('.okay'));

@@ -1,6 +1,7 @@
 from bottle import run, debug, route, static_file, template, request
 from nfd import getServiceLists
 
+
 @route("/")
 @route("/", method="GET")
 def index():

@@ -1,10 +1,11 @@
 nagios from distance
 
-utilizing status.cgi with some python (bottle)
+Status Monitor to view your current Nagios/Icinga
 
 Requirements:
 
 1. python-bottle - http://bottlepy.org/
+2. Nagios/Icinga installation
 
 Usage:
 
