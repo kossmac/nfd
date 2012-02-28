@@ -87,7 +87,8 @@ table {
 
 .okay li {
     list-style: none;
-    margin-left: 15%;
+    margin-left: 5%;
     margin-top: 10px;
     font-size: 3em;
+    color: #00b324;
 }

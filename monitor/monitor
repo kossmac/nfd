@@ -1,0 +1,35 @@
+#! /bin/sh
+
+### BEGIN INIT INFO
+# Provides:		monitor
+# Required-Start:	$local_fs $syslog
+# Required-Stop:	$local_fs $syslog
+# Default-Start:	2 3 4 5
+# Default-Stop:
+# Short-Description:	Monitor
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+case "$1" in
+  start)
+	log_daemon_msg "Starting monitor" "monitor"
+	startx &
+    	log_end_msg 0
+	;;
+  stop)
+	log_daemon_msg "Stopping monitor" "monitor"
+	killall chrome
+	;;
+
+  restart)
+	$0 stop
+	$0 start
+	;;
+
+  *)
+	log_action_msg "Usage: /etc/init.d/monitor {start|stop|restart}"
+	exit 1
+esac
+
+exit 0
