@@ -47,7 +47,7 @@ table {
     border-spacing: 0;
 }
 
-/* my stylez */
+/* my styles */
 #warning,
 #critical {
     height: 50%;
@@ -71,7 +71,7 @@ table {
     padding-top: 10px;
     padding-left: 15px;
     padding-right: 15px;
-    font-size: 4.5em;
+    font-size: 4em;
 }
 
 .okay {
