@@ -19,13 +19,36 @@
             $('#warning li:lt(4), #critical li:lt(4), .okay li:lt(4)').show();
         }, 2000);
         var changed = false;
-        var warningColor = $('#warning').css("backgroundColor");
-        var criticalColor = $('#critical').css("backgroundColor");
-        var font_Color = $('h3').css("fontcolor")
-        console.log(font_Color);
-        window.setInterval(function(){
-
-        }, 500)
+        /*var warningFontColor;
+        var criticalFontColor;
+        var helpWarning;
+        var helpCritical;*/
+        var i = 0;
+        var id = window.setInterval(function(){
+            if (changed) {
+                helpWarning = $('#warning').css("backgroundColor");
+                helpCritical = $('#critical').css("backgroundColor");
+                warningFontColor = $('#warning h3').css("color");
+                criticalFontColor = $('#critical h3').css("color");
+                $('#warning').css('backgroundColor', warningFontColor);
+                $('#critical').css('backgroundColor', criticalFontColor);
+                $('#warning h3').css('color', helpWarning);
+                $('#critical h3').css('color', helpCritical);
+                i++;
+                changed = false;
+            } else {
+                helpWarning = $('#warning').css("backgroundColor");
+                helpCritical = $('#critical').css("backgroundColor");
+                warningFontColor = $('#warning h3').css("color");
+                criticalFontColor = $('#critical h3').css("color");
+                $('#warning').css('backgroundColor', warningFontColor);
+                $('#critical').css('backgroundColor', criticalFontColor);
+                $('#warning h3').css('color', helpWarning);
+                $('#critical h3').css('color', helpCritical);
+                changed = true;
+            }
+            if (i >= 3) window.clearInterval(id);
+        }, 500);
     });
 
 })(jQuery);
