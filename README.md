@@ -1,6 +1,6 @@
 # nagios from distance #
 
-## Status Monitor to view your current Nagios/Icinga ##
+## Status Monitor to view your current Nagios/Icinga status from distance ##
 
 ### Requirements ###
 
