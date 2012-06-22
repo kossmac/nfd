@@ -47,6 +47,7 @@
                 $('#critical h3').css('color', helpCritical);
                 changed = true;
             }
+	    $('ul').bigtext();
             if (i >= 3) window.clearInterval(id);
         }, 500);
     });

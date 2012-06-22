@@ -4,6 +4,7 @@
     <title>Icinga from distance</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css" media="all"/>
     <script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/static/bigtext.js"></script>
     <script type="text/javascript" src="/static/script.js"></script>
     <META HTTP-EQUIV="REFRESH" CONTENT="150">
 </head>
