@@ -1,12 +1,12 @@
 #! /bin/sh
 
 ### BEGIN INIT INFO
-# Provides:		monitor
+# Provides:		nfd
 # Required-Start:	$local_fs $syslog
 # Required-Stop:	$local_fs $syslog
 # Default-Start:	2 3 4 5
 # Default-Stop:
-# Short-Description:	Monitor
+# Short-Description:	NFD
 ### END INIT INFO
 
 . /lib/lsb/init-functions
@@ -14,12 +14,12 @@
 case "$1" in
   start)
 	log_daemon_msg "Starting monitor" "monitor"
-	startx &
+	cd /var/www/nfd/ && python app.py &
     	log_end_msg 0
 	;;
   stop)
 	log_daemon_msg "Stopping monitor" "monitor"
-	killall chrome
+	killall python
 	;;
 
   restart)

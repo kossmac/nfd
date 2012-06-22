@@ -1,4 +1,4 @@
-# How to get a nice monitor for my gitce configuration #
+# How to get a nice monitor for my nfd configuration #
 
 In our small test setup, we use a dedicated Debian "sqeeze" box. Plain X11 is
 installed and the Google Chrome browser (it is the only one with built-in
@@ -15,6 +15,7 @@ and password initially.
 ## Boot ##
 
 /etc/init.d/monitor - Will "startx" with as root.
+/etc/init.d/nfd     - Will start the application as root
 /root/.xinitrc      - Will start "after_start" in background and fire up
                       Google Chrome in kiosk mode with our monitor page.
 /root/after_start   - Will wait some seconds until Google Chrome runs. Since
